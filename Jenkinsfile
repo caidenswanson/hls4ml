@@ -20,8 +20,7 @@ pipeline {
               pip install -U ../ --user
               ./convert-keras-models.sh -x -f keras-models.txt
               pip uninstall hls4ml -y'''
-          dir(path:'test/build_tests')
-              pytest test_keras_api_with_synthesis.py -v
+              pytest build_tests/test_keras_api_with_synthesis.py -v
         }
       }
     }
