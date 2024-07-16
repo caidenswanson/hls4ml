@@ -18,9 +18,9 @@ pipeline {
               conda install -y jupyterhub pydot graphviz pytest pytest-cov
               pip install pytest-randomly jupyter onnx>=1.4.0 matplotlib pandas seaborn pydigitalwavetools==1.1 pyyaml tensorflow==2.14 qonnx torch git+https://github.com/google/qkeras.git pyparsing
               pip install -U ../ --user
+              pytest build_tests/test_keras_api_with_synthesis.py -v
               ./convert-keras-models.sh -x -f keras-models.txt
               pip uninstall hls4ml -y'''
-              pytest build_tests/test_keras_api_with_synthesis.py -v
         }
       }
     }
